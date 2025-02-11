@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="BrokenApp.UserControlls.CLientUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BrokenApp.UserControlls"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="500">
+    <Border BorderBrush="Black" BorderThickness="1" Margin="3" Background="Transparent">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image Name ="PhotoIMG"/>
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Фамилия: "/>
+                    <TextBox Name="FirstNameTB" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Имя: "/>
+                    <TextBox Name="LastNameTB" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Отчество: "/>
+                    <TextBox Name="PatronymicTB" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Почта: "/>
+                    <TextBox Name="EmailTB" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Телефон: "/>
+                    <TextBox Name="PhoneNumberTB" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Дата рождения: "/>
+                    <DatePicker Name="BirthdayDP" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Дата регистрации: "/>
+                    <DatePicker Name="RegistationDP" Width="150" LostFocus="Interactable_LostFocus"/>
+                </StackPanel>
+            </StackPanel>
+            <Button Name="EditImageBtn" Content="Изменить фото" Grid.Row="1" Margin="5" Click="EditImageBtn_Click"/>
+            <Button Name="DelBtn" Content="Удалить" Grid.Row="1" Grid.Column="1" Margin="5" Click="DelBtn_Click"/>
+        </Grid>
+    </Border>
+</UserControl>
