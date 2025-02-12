@@ -104,6 +104,7 @@
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Discount" Type="float" />
           <Property Name="MainImagePath" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsRemoved" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ServicePhoto">
           <Key>
@@ -478,6 +479,7 @@
           <Property Name="MainImagePath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ClientService" Relationship="Self.FK_ClientService_Service" FromRole="Service" ToRole="ClientService" />
           <NavigationProperty Name="ServicePhoto" Relationship="Self.FK_ServicePhoto_Service" FromRole="Service" ToRole="ServicePhoto" />
+          <Property Name="IsRemoved" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="ServicePhoto">
           <Key>
@@ -778,6 +780,7 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="BrokenModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="IsRemoved" ColumnName="IsRemoved" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />

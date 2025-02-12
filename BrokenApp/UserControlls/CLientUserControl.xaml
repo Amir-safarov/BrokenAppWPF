@@ -48,7 +48,10 @@
                 </StackPanel>
             </StackPanel>
             <Button Name="EditImageBtn" Content="Изменить фото" Grid.Row="1" Margin="5" Click="EditImageBtn_Click"/>
-            <Button Name="DelBtn" Content="Удалить" Grid.Row="1" Grid.Column="1" Margin="5" Click="DelBtn_Click"/>
+            <DockPanel  Grid.Row="1" Grid.Column="1" Margin="5">
+                <Button Name="RegClientsServicesBtn" Content="Записать на услугу" HorizontalAlignment="Left" Click="RegClientsServicesBtn_Click"/>
+                <Button Name="DelBtn" Content="Удалить" HorizontalAlignment="Right" Click="DelBtn_Click"/>
+            </DockPanel>
         </Grid>
     </Border>
 </UserControl>

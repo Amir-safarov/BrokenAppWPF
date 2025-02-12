@@ -13,7 +13,7 @@ namespace BrokenApp
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.NavigationService.Navigate(new ClientListPage());
+            MainFrame.NavigationService.Navigate(new DistributionPage());
             if (Current == null)
                 Current = this;
             else

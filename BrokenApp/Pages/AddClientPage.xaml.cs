@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -42,22 +43,47 @@ namespace BrokenApp.Pages
 
         private void AddClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client()
+            StringBuilder stringBuilder = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(LastNameTB.Text))
+                stringBuilder.AppendLine("Введите фамилию клиента");
+            if (string.IsNullOrWhiteSpace(FirstNameTB.Text))
+                stringBuilder.AppendLine("Введите имя клиента");
+            if (string.IsNullOrWhiteSpace(PatronymicTB.Text))
+                stringBuilder.AppendLine("Введите отчество клиента");
+            if (string.IsNullOrWhiteSpace(EmailTB.Text))
+                stringBuilder.AppendLine("Введите Email клиента");
+            if (string.IsNullOrWhiteSpace(PhoneNumberTB.Text))
+                stringBuilder.AppendLine("Введите номер клиента");
+            if (string.IsNullOrWhiteSpace(BirthdayDP.Text))
+                stringBuilder.AppendLine("Введите дату рождения клиента");
+            if (_photoData == null)
+                stringBuilder.AppendLine("Выберите фото клиента");
+            if (GenderCB.SelectedItem == null)
+                stringBuilder.AppendLine("Выберите пол клиента");
+            if (stringBuilder.Length > 0)
             {
-                LastName = LastNameTB.Text,
-                FirstName = FirstNameTB.Text,
-                Patronymic = PatronymicTB.Text,
-                Email = EmailTB.Text,
-                Phone = PhoneNumberTB.Text,
-                Birthday = DateTime.Parse(BirthdayDP.Text),
-                RegistrationDate = DateTime.Parse(RegistationDP.Text),
-                IsRemoved = false,
-                PhotoBinary = _photoData,
-                Gender = GenderCB.SelectedItem as Gender
-            };
-            App.DB.Client.Add(client);
-            App.DB.SaveChanges();
-            NavigationService.Navigate(new ClientListPage());
+                MessageBox.Show($"{stringBuilder}", "Ошибка заполнения данных");
+                return;
+            }
+            else
+            {
+                Client client = new Client()
+                {
+                    LastName = LastNameTB.Text,
+                    FirstName = FirstNameTB.Text,
+                    Patronymic = PatronymicTB.Text,
+                    Email = EmailTB.Text,
+                    Phone = PhoneNumberTB.Text,
+                    Birthday = DateTime.Parse(BirthdayDP.Text),
+                    RegistrationDate = DateTime.Now,
+                    IsRemoved = false,
+                    PhotoBinary = _photoData,
+                    Gender = GenderCB.SelectedItem as Gender
+                };
+                App.DB.Client.Add(client);
+                App.DB.SaveChanges();
+                NavigationService.Navigate(new ClientListPage());
+            }
         }
     }
 }

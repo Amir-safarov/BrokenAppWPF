@@ -12,7 +12,7 @@ namespace BrokenApp.Pages
     /// </summary>
     public partial class ClientListPage : Page
     {
-        private List<Client> _allClients; 
+        private IEnumerable<Client> _allClients; 
         private IEnumerable<Client> _filteredClients; 
 
         public ClientListPage()
@@ -32,10 +32,7 @@ namespace BrokenApp.Pages
         {
             string searchText = FIOFilterTB.Text.ToLower().Trim();
 
-            _filteredClients = _allClients.Where(x =>
-                x.LastName.ToLower().Contains(searchText) ||
-                x.FirstName.ToLower().Contains(searchText) ||
-                x.Patronymic.ToLower().Contains(searchText) ||
+            _filteredClients = _allClients.Where(x => !x.IsRemoved &&
                 $"{x.LastName} {x.FirstName} {x.Patronymic}".ToLower().Contains(searchText)
             );
 
@@ -50,6 +47,11 @@ namespace BrokenApp.Pages
             {
                 ClientWrap.Children.Add(new CLientUserControl(client));
             }
+        }
+
+        private void ExitBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DistributionPage());
         }
     }
 }

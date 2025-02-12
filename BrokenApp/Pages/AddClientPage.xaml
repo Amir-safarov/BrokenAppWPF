@@ -14,14 +14,15 @@
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="328*"/>
+            <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
-        <Border>
+        <TextBlock Text ="Добавление клиента" FontSize="20" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Border Grid.Row="1">
             <Image Name ="PhotoIMG"/>
         </Border>
-
-        <StackPanel HorizontalAlignment="Left" Grid.Column="1">
+        <StackPanel HorizontalAlignment="Left" Grid.Column="1"  Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Text="Фамилия: "/>
                 <TextBox Name="LastNameTB" Width="150"/>
@@ -50,13 +51,9 @@
                 <TextBlock Text="Дата рождения: "/>
                 <DatePicker Name="BirthdayDP" Width="150" />
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Дата регистрации: "/>
-                <DatePicker Name="RegistationDP" Width="150" />
-            </StackPanel>
         </StackPanel>
-        <Button Name="AddImageBtn" Content="Добавить фото" Grid.Row="1" Margin="5" Click="AddImageBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="5" >
+        <Button Name="AddImageBtn" Content="Добавить фото" Grid.Row="2" Click="AddImageBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" >
             <Button Name="AddClientBtn" Content="Добавить клента" Click="AddClientBtn_Click" VerticalAlignment="Center"/>
             <Button Name="ExitBtn" Content="Выйти" Margin="10 0 0 0" Click="ExitBtn_Click" VerticalAlignment="Center"/>
         </StackPanel>

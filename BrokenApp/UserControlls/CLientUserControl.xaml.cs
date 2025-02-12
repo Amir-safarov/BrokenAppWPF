@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using BrokenApp.Pages;
 using Microsoft.Win32;
+using System.Windows.Navigation;
 
 namespace BrokenApp.UserControlls
 {
@@ -86,6 +87,11 @@ namespace BrokenApp.UserControlls
             _cLient.Birthday = DateTime.Parse(BirthdayDP.Text); 
             _cLient.RegistrationDate = DateTime.Parse(RegistationDP.Text);
             App.DB.SaveChanges();
+        }
+
+        private void RegClientsServicesBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MainWindow.Current.Naviagate(new ClientServiceListPage(_cLient));
         }
     }
 }
