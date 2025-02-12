@@ -18,7 +18,7 @@ namespace BrokenApp.Pages
         {
             InitializeComponent();
             _client = client;
-            ClientNameTB.Text = $"Клиент: {_client.LastName} {_client.FirstName3} {_client.Patronymic}";
+            ClientNameTB.Text = $"Клиент: {_client.LastName} {_client.FirstName} {_client.Patronymic}";
             ServiceCB.ItemsSource = App.DB.Service.ToList();
             ServiceCB.DisplayMemberPath = "Title";
         }
