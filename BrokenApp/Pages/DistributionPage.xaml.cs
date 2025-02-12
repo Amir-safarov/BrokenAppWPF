@@ -27,7 +27,7 @@ namespace BrokenApp.Pages
 
         private void ClientServiceListBTN_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new ClientServiceListPage());
+            NavigationService.Navigate(new ClientServiceListPage());
 
         }
     }

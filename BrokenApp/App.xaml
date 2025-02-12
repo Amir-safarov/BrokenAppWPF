@@ -16,10 +16,6 @@
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="Background" Value="#ffffe1"/>
         </Style>
-        <Style TargetType="Border">
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="BorderThickness" Value="1"/>
-        </Style>
         <Style TargetType="DatePicker">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontFamily" Value="Tw Cen MT"/>

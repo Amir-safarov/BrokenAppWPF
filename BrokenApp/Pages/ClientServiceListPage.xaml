@@ -14,11 +14,16 @@
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <DockPanel>
+            <StackPanel>
+                <TextBlock Text="Список клиентов"/>
+                <ComboBox Name="ClientsCB" Width="200" SelectionChanged="ClientsCB_SelectionChanged"/>
+            </StackPanel>
             <Button Name="ExitBtn" Content="Выйти" Margin="10 0 0 0" Click="ExitBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right" />
         </DockPanel>
         <ListView x:Name="SericeList"  Grid.Row="1">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="Фамилия клиента" Width="Auto" DisplayMemberBinding="{Binding Client.FirstName}"/>
                     <GridViewColumn Header="Наименование услуги" Width="Auto" DisplayMemberBinding="{Binding Service.Title}"/>
                     <GridViewColumn Header="Дата оказания" Width="Auto" DisplayMemberBinding="{Binding StartTime}"/>
                 </GridView>

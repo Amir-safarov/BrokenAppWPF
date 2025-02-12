@@ -21,7 +21,7 @@
             </StackPanel>
             <Button Name="ExitBtn" Content="Выйти" Margin="10 0 0 0" Click="ExitBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right" />
         </DockPanel>
-        <Border BorderThickness="3" Grid.Row="1" >
+        <Border BorderThickness="3" BorderBrush="Black" Grid.Row="1" >
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Column="0">
                 <WrapPanel Name ="ServiceWrap" ItemWidth="700" ItemHeight="200" />
             </ScrollViewer>

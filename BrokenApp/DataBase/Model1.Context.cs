@@ -13,10 +13,10 @@ namespace BrokenApp.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BrokenEntities1 : DbContext
+    public partial class BrokenEntities2 : DbContext
     {
-        public BrokenEntities1()
-            : base("name=BrokenEntities1")
+        public BrokenEntities2()
+            : base("name=BrokenEntities2")
         {
         }
     

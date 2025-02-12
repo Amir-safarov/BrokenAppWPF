@@ -16,7 +16,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock Text ="Запись клиента на услугу" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Text ="Клиент: Такой то" FontSize="20" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Text ="Клиент: Такой то" Name="ClientNameTB" FontSize="20" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel HorizontalAlignment="Right">
                 <TextBlock Text="Услуга: " HorizontalAlignment="Right"/>
@@ -31,7 +31,7 @@
                 <TextBox Name="ComentTB" Width="250" Height="50"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
-                <Button Content="Добавить"/>
+                <Button Name="AddServiceBtn" Content="Добавить" Click="AddServiceBtn_Click"/>
                 <Button Content="Выйти" Margin="10 0 0 0"/>
             </StackPanel>
             

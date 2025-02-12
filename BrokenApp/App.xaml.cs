@@ -8,6 +8,6 @@ namespace BrokenApp
     /// </summary>
     public partial class App : Application
     {
-        public static BrokenEntities1 DB = new BrokenEntities1();
+        public static BrokenEntities2 DB = new BrokenEntities2();
     }
 }

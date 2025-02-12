@@ -91,7 +91,7 @@ namespace BrokenApp.UserControlls
 
         private void RegClientsServicesBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            MainWindow.Current.Naviagate(new ClientServiceListPage(_cLient));
+            MainWindow.Current.Naviagate(new ClientServiceRegPage(_cLient));
         }
     }
 }
