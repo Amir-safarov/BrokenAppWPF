@@ -13,14 +13,12 @@ namespace BrokenApp.Pages
     /// </summary>
     public partial class ServiceListPage : Page
     {
-        private IEnumerable<Service> _allservices;
-        private IEnumerable<Service> _filteredServices;
+        private IEnumerable<Service> _services;
 
         public ServiceListPage()
         {
             InitializeComponent();
-            _allservices = App.DB.Service.ToList();
-            _filteredServices = _allservices.Where(x => !x.IsRemoved);
+            _services = App.DB.Service.Where(x => !x.IsRemoved);
             RefreshList();
         }
 
@@ -28,7 +26,7 @@ namespace BrokenApp.Pages
         {
             ServiceWrap.Children.Clear();
 
-            foreach (Service service in _filteredServices)
+            foreach (Service service in _services)
             {
                 ServiceWrap.Children.Add(new ServiceUserControl(service));
             }
@@ -37,16 +35,6 @@ namespace BrokenApp.Pages
         private void AddNewServiceBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddServicePage());
-        }
-
-        private void NameFilterTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string searchText = NameFilterTB.Text.ToLower().Trim();
-
-            _filteredServices = _allservices.Where(x => !x.IsRemoved &&
-                $"{x.Title}".ToLower().Contains(searchText)
-            );
-            RefreshList();
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)

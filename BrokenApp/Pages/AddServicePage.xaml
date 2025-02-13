@@ -26,19 +26,13 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Цена: "/>
-                <TextBox Name="PriceTB" Width="150" TextChanged="SaleCounter_TextChanged" PreviewTextInput="Digit_PreviewTextInput" />
+                <TextBox Name="PriceTB" Width="150" PreviewTextInput="Digit_PreviewTextInput" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Скидка (%) : "/>
-                <TextBox Name="SaleTB" Width="100" TextChanged="SaleCounter_TextChanged" PreviewTextInput="Digit_PreviewTextInput"/>
+                <TextBox Name="SaleTB" Width="100" PreviewTextInput="Digit_PreviewTextInput"/>
             </StackPanel>
-            <StackPanel >
-                <TextBlock Text="Цена со скидкой: "/>
-                <Border>
-                    <TextBlock Name="SalePriceTB"/>
-                </Border>
-            </StackPanel>
-        </StackPanel>
+          </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" >
             <Button Name="AddServiceBtn" Content="Добавить услугу" Click="AddClientBtn_Click" VerticalAlignment="Center"/>
             <Button Name="ExitBtn" Content="Выйти" Margin="10 0 0 0" Click="ExitBtn_Click" VerticalAlignment="Center"/>

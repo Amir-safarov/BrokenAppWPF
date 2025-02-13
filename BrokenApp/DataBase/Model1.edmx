@@ -626,7 +626,7 @@
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="BrokenEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BrokenEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="ClientService" EntityType="Self.ClientService" />
           <EntitySet Name="DocumentByService" EntityType="Self.DocumentByService" />
@@ -689,7 +689,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище BrokenModelContainer" CdmEntityContainer="BrokenEntities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BrokenModelContainer" CdmEntityContainer="BrokenEntities3">
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="BrokenModel.Client">
               <MappingFragment StoreEntitySet="Client">

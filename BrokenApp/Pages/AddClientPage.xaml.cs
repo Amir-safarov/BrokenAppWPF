@@ -43,26 +43,26 @@ namespace BrokenApp.Pages
 
         private void AddClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder error = new StringBuilder();
             if (string.IsNullOrWhiteSpace(LastNameTB.Text))
-                stringBuilder.AppendLine("Введите фамилию клиента");
+                error.AppendLine("Введите фамилию клиента");
             if (string.IsNullOrWhiteSpace(FirstNameTB.Text))
-                stringBuilder.AppendLine("Введите имя клиента");
+                error.AppendLine("Введите имя клиента");
             if (string.IsNullOrWhiteSpace(PatronymicTB.Text))
-                stringBuilder.AppendLine("Введите отчество клиента");
+                error.AppendLine("Введите отчество клиента");
             if (string.IsNullOrWhiteSpace(EmailTB.Text))
-                stringBuilder.AppendLine("Введите Email клиента");
+                error.AppendLine("Введите Email клиента");
             if (string.IsNullOrWhiteSpace(PhoneNumberTB.Text))
-                stringBuilder.AppendLine("Введите номер клиента");
+                error.AppendLine("Введите номер клиента");
             if (string.IsNullOrWhiteSpace(BirthdayDP.Text))
-                stringBuilder.AppendLine("Введите дату рождения клиента");
+                error.AppendLine("Введите дату рождения клиента");
             if (_photoData == null)
-                stringBuilder.AppendLine("Выберите фото клиента");
+                error.AppendLine("Выберите фото клиента");
             if (GenderCB.SelectedItem == null)
-                stringBuilder.AppendLine("Выберите пол клиента");
-            if (stringBuilder.Length > 0)
+                error.AppendLine("Выберите пол клиента");
+            if (error.Length > 0)
             {
-                MessageBox.Show($"{stringBuilder}", "Ошибка заполнения данных");
+                MessageBox.Show($"{error}", "Ошибка");
                 return;
             }
             else

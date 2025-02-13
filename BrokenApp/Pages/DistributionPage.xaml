@@ -10,13 +10,9 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="ClientListBTN" Content="Список клиентов" Click="ClientListBTN_Click"/>
-                <Button x:Name="ServiceListBTN" Content="Список услуг" Margin="10 0 0 0" Click="ServiceListBTN_Click"/>
-            </StackPanel>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
-                <Button x:Name="ClientServiceListBTN" Content="Список клиентов-услуг" Click="ClientServiceListBTN_Click"/>
-            </StackPanel>
+            <Button x:Name="ClientListBTN" Content="Список клиентов" Click="ClientListBTN_Click" Margin="10"/>
+            <Button x:Name="ServiceListBTN" Content="Список услуг" Margin="10" Click="ServiceListBTN_Click"/>
+            <Button x:Name="ClientServiceListBTN" Content="Список клиентов-услуг" Click="ClientServiceListBTN_Click" Margin="10"/>
         </StackPanel>
 
     </Grid>

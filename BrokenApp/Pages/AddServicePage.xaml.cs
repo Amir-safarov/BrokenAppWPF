@@ -27,7 +27,7 @@ namespace BrokenApp.Pages
                 stringBuilder.AppendLine("Введите наименование услуги");
             if (stringBuilder.Length > 0)
             {
-                MessageBox.Show($"{stringBuilder}", "Ошибка заполнения данных");
+                MessageBox.Show($"{stringBuilder}", "Ошибка");
                 return;
             }
             else
@@ -52,14 +52,6 @@ namespace BrokenApp.Pages
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ServiceListPage());
-        }
-
-        private void SaleCounter_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(PriceTB.Text) || string.IsNullOrEmpty(SaleTB.Text))
-                return;
-            SalePriceTB.Text =
-                $"{decimal.Parse(PriceTB.Text) - (decimal.Parse(PriceTB.Text) * decimal.Parse(SaleTB.Text) / 100)}";;
         }
 
         private void Digit_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)

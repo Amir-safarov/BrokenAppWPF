@@ -12,15 +12,13 @@ namespace BrokenApp.Pages
     /// </summary>
     public partial class ClientListPage : Page
     {
-        private IEnumerable<Client> _allClients; 
-        private IEnumerable<Client> _filteredClients; 
+        private IEnumerable<Client> _clients; 
 
         public ClientListPage()
         {
             InitializeComponent();
 
-            _allClients = App.DB.Client.Where(x => !x.IsRemoved).ToList();
-            _filteredClients = _allClients;
+            _clients = App.DB.Client.Where(x => !x.IsRemoved).ToList();
 
             RefreshList();
         }
@@ -28,22 +26,11 @@ namespace BrokenApp.Pages
         private void AddNewClientBtn_Click(object sender, System.Windows.RoutedEventArgs e) =>
             NavigationService.Navigate(new AddClientPage());
 
-        private void FIOFilterTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string searchText = FIOFilterTB.Text.ToLower().Trim();
-
-            _filteredClients = _allClients.Where(x => !x.IsRemoved &&
-                $"{x.LastName} {x.FirstName} {x.Patronymic}".ToLower().Contains(searchText)
-            );
-
-            RefreshList();
-        }
-
         private void RefreshList()
         {
             ClientWrap.Children.Clear(); 
 
-            foreach (Client client in _filteredClients)
+            foreach (Client client in _clients)
             {
                 ClientWrap.Children.Add(new CLientUserControl(client));
             }

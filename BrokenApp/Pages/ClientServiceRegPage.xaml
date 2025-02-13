@@ -16,7 +16,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <TextBlock Text ="Запись клиента на услугу" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Text ="Клиент: Такой то" Name="ClientNameTB" FontSize="20" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Text ="Клиент: ////" Name="ClientNameTB" FontSize="20" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel HorizontalAlignment="Right">
                 <TextBlock Text="Услуга: " HorizontalAlignment="Right"/>

@@ -9,20 +9,12 @@
       Title="AddClientPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1.5*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="45*"/>
             <RowDefinition Height="328*"/>
             <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text ="Добавление клиента" FontSize="20" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Border Grid.Row="1">
-            <Image Name ="PhotoIMG"/>
-        </Border>
-        <StackPanel HorizontalAlignment="Left" Grid.Column="1"  Grid.Row="1">
+        <StackPanel HorizontalAlignment="Center" Grid.Column="1"  Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock Text="Фамилия: "/>
                 <TextBox Name="LastNameTB" Width="150"/>
@@ -36,7 +28,7 @@
                 <TextBox Name="PatronymicTB" Width="150" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Отчество: "/>
+                <TextBlock Text="Пол: "/>
                 <ComboBox Name ="GenderCB"  Width="150"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -51,11 +43,13 @@
                 <TextBlock Text="Дата рождения: "/>
                 <DatePicker Name="BirthdayDP" Width="150" />
             </StackPanel>
+            <Button Name="AddImageBtn" Click="AddImageBtn_Click" Background="Transparent" Height="150" Width="150">
+                <Image Name ="PhotoIMG"/>
+            </Button>
         </StackPanel>
-        <Button Name="AddImageBtn" Content="Добавить фото" Grid.Row="2" Click="AddImageBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" >
+        <DockPanel Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" >
             <Button Name="AddClientBtn" Content="Добавить клента" Click="AddClientBtn_Click" VerticalAlignment="Center"/>
-            <Button Name="ExitBtn" Content="Выйти" Margin="10 0 0 0" Click="ExitBtn_Click" VerticalAlignment="Center"/>
-        </StackPanel>
+            <Button Name="ExitBtn" Content="Выйти" HorizontalAlignment="Right" Click="ExitBtn_Click" VerticalAlignment="Center"/>
+        </DockPanel>
     </Grid>
 </Page>

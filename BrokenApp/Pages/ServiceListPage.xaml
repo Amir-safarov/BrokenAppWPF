@@ -15,10 +15,6 @@
         </Grid.RowDefinitions>
         <DockPanel>
             <Button Name="AddNewServiceBtn" Content="Добавить услугу" Click="AddNewServiceBtn_Click" HorizontalAlignment="Left" Margin="5"/>
-            <StackPanel>
-                <TextBlock Text="Поиск по названию"/>
-                <TextBox Name="NameFilterTB" Width="200" TextChanged="NameFilterTB_TextChanged"/>
-            </StackPanel>
             <Button Name="ExitBtn" Content="Выйти" Margin="10 0 0 0" Click="ExitBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Right" />
         </DockPanel>
         <Border BorderThickness="3" BorderBrush="Black" Grid.Row="1" >
